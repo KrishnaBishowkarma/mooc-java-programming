@@ -11,15 +11,17 @@ public class RepeatingBreakingAndRemembering {
         // If you want, you can send this exercise to the server
         // when it's just partially done. In that case the server will complain about
         // the parts you haven't done, but you'll get points for the finished parts.
+
+        Scanner scanner = new Scanner(System.in);
+
         int sum = 0;
         int count = 0;
         double avg = 0;
         int evenNum = 0;
         int oddNum = 0;
 
-        Scanner scanner = new Scanner(System.in);
+        System.out.println("Give numbers:");
 
-        System.out.println("Give numbers: ");
         while (true) {
             int num = Integer.parseInt(scanner.nextLine());
 
@@ -29,7 +31,6 @@ public class RepeatingBreakingAndRemembering {
 
             sum += num;
             count++;
-            avg = (double) sum / count;
 
             if (num % 2 == 0) {
                 evenNum++;
@@ -37,6 +38,8 @@ public class RepeatingBreakingAndRemembering {
                 oddNum++;
             }
         }
+
+        avg = (count > 0) ? (double) sum / count : 0;
 
         System.out.println("Thx! Bye!");
         System.out.println("Sum: " + sum);
